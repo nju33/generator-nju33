@@ -41,6 +41,38 @@ yo nju33:npm <name> <module-name>
 2. Install with `yarn`
 3. Run `git init`
 
+### `babel`
+
+#### Common plugins
+
+- babel-preset-env
+- babel-plugin-transform-class-properties
+- babel-plugin-transform-decorators-legacy
+- babel-plugin-transform-object-rest-spread
+
+#### Optional plugins
+
+When typing `y`, install the following.
+
+- babel-plugin-transform-runtime
+- babel-plugin-external-helpers
+
+If not, the following
+
+- babel-plugin-add-module-exports
+
+#### Usage
+
+```bash
+yo nju33:babel
+? Compile further after converting with Babel? (Y/n): _
+```
+
+#### Process
+
+1. Look for `package.json` and create `.babelrc` in the same directory or  edit already `.babelrc`
+2. Install plugins with `yarn`
+
 ## License
 
 The MIT License (MIT)
