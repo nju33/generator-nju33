@@ -29,8 +29,20 @@ npm i -g generator-nju33
 #### Usage
 
 ```bash
-yo nju33:npm <name> <module-name>
+yo nju33:npm <name> <module-name> <-m[inimum]>
 ```
+
+##### Arguments
+
+- [required] `name`  
+  This package name
+- [required] `module-name`  
+  This module name
+
+##### Options
+
+- [optional] `minimum` or `m`  
+  Whether it is the minimum env
 
 #### Process
 
