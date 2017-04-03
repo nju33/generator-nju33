@@ -27,8 +27,8 @@ data.set({
  * Released under the MIT License
  * https://github.com/nju33/${pkg.name}
  */
-`.trim(),
-  dependencies: Object.keys(pkg.dependencies)
+`.trim()
+  // dependencies: Object.keys(pkg.dependencies)
 });
 
 construction.set({

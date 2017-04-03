@@ -32,14 +32,14 @@ class Script {
     this.process = pPipe(this.rollup, this.write);
   }
 
-  @data.inject('dependencies', 'moduleName', 'banner')
+  @data.inject('moduleName', 'banner')
   @construction.inject('script')
-  async rollup({script}, {dependencies, moduleName, banner}) {
+  async rollup({script}, {moduleName, banner}) {
     const formats = ['iife'];
     const config$ = {
       ...config,
-      entry: script.src,
-      external: dependencies
+      entry: script.src
+      // external: dependencies
     };
     const bundle = await rollup(config$);
 
