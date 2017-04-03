@@ -1,0 +1,26 @@
+{{#if style}}
+  <div>Yes</div>
+{{/if}}
+
+<style>
+</style>
+
+<script>
+export default {
+  data() {
+    return {
+      defaultStyle: {},
+    };
+  },
+  oncreate() {
+    (() => {
+      const {style = null, defaultStyle} = this.get();
+      if (typeof style !== 'object') {
+        this.set({style: Object.assign({}, defaultStyle)});
+      } else {
+        this.set({style: Object.assign({}, defaultStyle, style)});
+      }
+    })();
+  }
+};
+</script>
