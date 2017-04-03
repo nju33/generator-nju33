@@ -1,11 +1,13 @@
 {
-  "devDependencies": {
-    "babel-loader": "^6.4.1",
-    "babel-preset-env": "^1.2.2",
-    "webpack": "^2.2.1"
-  },
   "scripts": {
-    "dev": "webpack -w"
+    "dev": "rollup -w -i index.js -o bundle.js -f iife"
+  },
+  "devDependencies": {
+    "@nju33/rollup-preset": "^0.0.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^3.2.2"
   },
   "dependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
