@@ -1,3 +1,3 @@
-module.exports = () => {
-  return null
-};
+const Generator = require('yeoman-generator');
+
+module.exports = Generator
