@@ -19,15 +19,12 @@ npm i -g generator-nju33
 #### Env
 
 - rollup (svelte|vue|babel[-preset-env])
+  - iife
+  - umd
+  - es
 - xo
 - ava
 - browser-sync
-
-#### Format
-
-- iife
-- umd
-- es
 
 #### Usage
 
