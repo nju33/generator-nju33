@@ -1,7 +1,7 @@
 {
   "name": "generator-nju33",
   "description": "Generator for nju33",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "nju33 <nju33.ki@gmail.com>",
   "bugs": "https://github.com/nju33/generator-nju33/issues",
   "dependencies": {
