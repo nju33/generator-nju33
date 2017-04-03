@@ -20,6 +20,7 @@
     "gulp-plumber": "^1.1.0",
     "pify": "^2.3.0",
     "pkg-up": "^1.0.0",
+    "update-notifier": "^2.1.0",
     "xo": "^0.18.1",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
