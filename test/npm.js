@@ -24,17 +24,3 @@ test('test', async t => {
   t.is(pkd.name, 'foo');
   assert.fileContent(files[1], /Foo/);
 });
-//
-// describe('nju33:app', function () {
-//   before(function () {
-//     return helpers.run(path.join(__dirname, '../generators/app'))
-//       .withPrompts({someAnswer: true})
-//       .toPromise();
-//   });
-//
-//   it('creates files', function () {
-//     assert.file([
-//       'dummyfile.txt'
-//     ]);
-//   });
-// });
