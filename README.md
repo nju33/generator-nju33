@@ -16,6 +16,8 @@ npm i -g generator-nju33
 
 ### `npm`
 
+Libraries and es-modules.
+
 #### Env
 
 - rollup (svelte|vue|babel[-preset-env])
@@ -43,6 +45,29 @@ yo nju33:npm <name> <module-name> <-m[inimum]>
 
 - [optional] `minimum` or `m`  
   Whether it is the minimum env
+
+#### Process
+
+1. Copy a set of files
+2. Install with `yarn`
+3. Run `git init`
+
+### `petty`
+
+Helpers and plugins.
+
+#### Usage
+
+```bash
+yo nju33:npm <name> <module-name>
+```
+
+##### Arguments
+
+- [required] `name`  
+  This package name
+- [required] `module-name`  
+  This module name
 
 #### Process
 

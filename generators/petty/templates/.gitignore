@@ -1,5 +1,3 @@
-node_modules
-coverage
 ### https://raw.github.com/github/gitignore/ce62a06810c01a5071610ea70dcc417916029f7a/Global/OSX.gitignore
 
 .DS_Store
@@ -64,6 +62,4 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-/generators/npm/index.js
-/generators/petty/index.js
-/generators/babel/index.js
+/index.js
