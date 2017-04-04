@@ -17,6 +17,8 @@ const cli = meow(`
     $ yarn build
 `, {
   alias: {
+    b: 'beep',
+    f: 'format',
     w: 'watch'
   }
 });
@@ -30,7 +32,8 @@ data.set({
  * Released under the MIT License
  * https://github.com/nju33/${pkg.name}
  */
-`.trim()
+`.trim(),
+  format: cli.flags.format || 'iife'
   // dependencies: Object.keys(pkg.dependencies)
 });
 

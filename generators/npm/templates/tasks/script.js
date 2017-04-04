@@ -12,6 +12,7 @@ const cache = {
   umd: null,
   es: null
 };
+const $formats = ['iife', 'umd', 'es'];
 
 const config = {
   plugins: [
@@ -32,10 +33,10 @@ class Script {
     this.process = pPipe(this.rollup, this.write);
   }
 
-  @data.inject('moduleName', 'banner')
+  @data.inject('format', 'moduleName', 'banner')
   @construction.inject('script')
-  async rollup({script}, {moduleName, banner}) {
-    const formats = ['iife'];
+  async rollup({script}, {format, moduleName, banner}) {
+    const formats = [format];
     const config$ = {
       ...config,
       entry: script.src
@@ -44,7 +45,9 @@ class Script {
     const bundle = await rollup(config$);
 
     if (process.env.NODE_ENV === 'prod') {
-      formats.push('umd', 'es');
+      const cloned$formats = $formats.slice();
+      cloned$formats.splice($formats.indexOf(format), 1);
+      Array.prototype.push.apply(formats, cloned$formats);
     }
 
     const results = formats.reduce(($results, format) => {
