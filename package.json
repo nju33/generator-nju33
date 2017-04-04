@@ -5,6 +5,7 @@
   "author": "nju33 <nju33.ki@gmail.com>",
   "bugs": "https://github.com/nju33/generator-nju33/issues",
   "dependencies": {
+    "pkg-up": "^1.0.0",
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
@@ -19,7 +20,6 @@
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "pify": "^2.3.0",
-    "pkg-up": "^1.0.0",
     "update-notifier": "^2.1.0",
     "xo": "^0.18.1",
     "yeoman-assert": "^3.0.0",
