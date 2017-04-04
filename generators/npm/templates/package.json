@@ -60,7 +60,7 @@
   "repository": "nju33/<%=name%>",
   "scripts": {
     "build": "NODE_ENV=dev node -r babel-register task.config.js build",
-    "build:prod": "cross-env NODE_ENV=prod node -r babel-register task.config.js build",
+    "build:prod": "NODE_ENV=prod node -r babel-register task.config.js build",
     "dev": "NODE_ENV=dev node -r babel-register task.config.js dev --beep",
     "prepublish": "yarn build",
     "test": "yarn test:xo && yarn ava",
