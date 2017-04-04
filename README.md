@@ -59,7 +59,7 @@ Helpers and plugins.
 #### Usage
 
 ```bash
-yo nju33:npm <name> <module-name>
+yo nju33:petty <name> <module-name>
 ```
 
 ##### Arguments
