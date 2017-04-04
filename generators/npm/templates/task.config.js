@@ -63,7 +63,8 @@ construction.set({
     case 'dev': {
       chokidar.watch([
         construction.get('style').watch,
-        construction.get('script').watch
+        construction.get('script').watch,
+        `${__dirname}/+(example|test/fixtures)/**/*`
       ]).on('all', debounce(async (ev, filePath) => {
         build(cli.input[0], ev).then(() => {
           server.reload(filePath);

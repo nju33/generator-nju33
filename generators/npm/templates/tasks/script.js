@@ -25,7 +25,7 @@ const config = {
       return;
     }
     console.warn(warning.message);
-  },
+  }
 };
 
 class Script {
@@ -40,7 +40,7 @@ class Script {
     const config$ = {
       ...config,
       entry: script.src
-      // external: dependencies
+      // External: dependencies
     };
     const bundle = await rollup(config$);
 
