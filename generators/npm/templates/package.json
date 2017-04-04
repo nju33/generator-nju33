@@ -63,7 +63,7 @@
     "build:prod": "NODE_ENV=prod node -r babel-register task.config.js build",
     "dev": "NODE_ENV=dev node -r babel-register task.config.js dev --beep",
     "prepublish": "yarn build",
-    "test": "yarn test:xo && yarn ava",
+    "test": "yarn test:xo && yarn test:ava",
     "test:ava": "ava",
     "test:xo": "xo {lib,tasks,test}/**/*.js task.config.js"
   },

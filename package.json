@@ -40,7 +40,7 @@
     "build": "gulp lib",
     "dev": "gulp watch",
     "prepublish": "yarn build",
-    "test": "yarn test:xo && yarn ava",
+    "test": "yarn test:xo && yarn test:ava",
     "test:ava": "ava",
     "test:xo": "xo {lib,test}/**/*.js"
   },
