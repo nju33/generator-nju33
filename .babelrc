@@ -1,7 +1,9 @@
 {
   "presets": [
     ["env", {
-      "target": 6
+      "targets": {
+        "node": 6
+      }
     }]
   ],
   "plugins": [
