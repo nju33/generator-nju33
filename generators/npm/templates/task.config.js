@@ -3,12 +3,15 @@ import ora from 'ora';
 import meow from 'meow';
 import chokidar from 'chokidar';
 import debounce from 'lodash/debounce';
+import PrettyError from 'pretty-error';
+import beeper from 'beeper';
 import pkg from './package';
 import {data, construction} from './tasks/injector';
 import server from './tasks/server';
 import style from './tasks/style';
 import script from './tasks/script';
 
+const pe = new PrettyError();
 const cli = meow(`
   Usage
     $ yarn build
@@ -76,9 +79,17 @@ construction.set({
 
 async function build(task, ev = null) {
   const spinner = startOra();
-  await style.process();
-  await script.process();
-  spinner.succeed(`[${task}${ev ? ':' + ev : ''}] Process complete`);
+  try {
+    await style.process();
+    await script.process();
+    spinner.succeed(`[${task}${ev ? ':' + ev : ''}] Process succeed`);
+  } catch (err) {
+    spinner.fail(`[${task}${ev ? ':' + ev : ''}] Process fail`);
+    console.log(pe.render(err));
+    if (cli.flags.beep) {
+      beeper(2);
+    }
+  }
 }
 
 function startOra() {

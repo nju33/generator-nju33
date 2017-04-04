@@ -14,11 +14,7 @@ class Style {
   @construction.inject('style')
   async less({style}, css) {
     let result = null;
-    try {
-      result = await less.render(css, style.src);
-    } catch (err) {
-      console.log(err);
-    }
+    result = await less.render(css, style.src);
     return result.css;
   }
 
