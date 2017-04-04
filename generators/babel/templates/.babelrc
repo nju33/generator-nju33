@@ -1,7 +1,9 @@
 {
   "presets": [
     ["env", {
-      "browsers": ["> 3%", "last 2 versions"]
+      "targets": {
+        "browsers": ["> 3%", "last 2 versions"],
+      }
     }]
   ],
   "plugins": [
