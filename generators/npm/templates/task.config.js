@@ -49,7 +49,7 @@ construction.set({
     }
   },
   script: {
-    watch: `${__dirname}/lib/**/*.+(js|html)`,
+    watch: `${__dirname}/lib/**/*.+(js|html|vue)`,
     src: `${__dirname}/lib/index.js`,
     dest: {
       iife: `${__dirname}/dist/${pkg.name}.js`,
