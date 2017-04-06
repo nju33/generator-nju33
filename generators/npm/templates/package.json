@@ -71,7 +71,7 @@
     "test": "yarn test:xo && yarn test:ava",
     "pretest:ava": "yarn build:umd",
     "test:ava": "ava",
-    "test:ava:watch": "ava",
+    "test:ava:watch": "ava -w",
     "test:xo": "xo {lib,tasks,test}/**/*.js task.config.js"
   },
   "xo": {
