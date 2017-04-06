@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import pify from 'pify';
 import pPipe from 'p-pipe';
+import pReduce from 'p-reduce';
 import {rollup} from 'rollup';
 import preset from '@nju33/rollup-preset';
 import nullpo from 'nullpo';
@@ -37,19 +38,20 @@ class Script {
   @construction.inject('script')
   async rollup({script}, {format, moduleName, banner}) {
     const formats = [format];
-    const config$ = {
-      ...config,
-      entry: script.src
-    };
-    const bundle = await rollup(config$);
-
     if (process.env.NODE_ENV === 'prod') {
       const cloned$formats = $formats.slice();
       cloned$formats.splice($formats.indexOf(format), 1);
       Array.prototype.push.apply(formats, cloned$formats);
     }
 
-    const results = formats.reduce(($results, format) => {
+    const results = await pReduce(formats, async ($results, format) => {
+      const config$ = {
+        ...config,
+        cache: cache[format],
+        entry: script.src
+      };
+      const bundle = await rollup(config$);
+
       const result = bundle.generate(nullpo({
         format,
         sourceMap: true,
