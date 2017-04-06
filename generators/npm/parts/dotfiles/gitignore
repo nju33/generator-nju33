@@ -66,5 +66,7 @@ Temporary Items
 /dist/**
 !/dist/.gitkeep
 !/dist/<%=name%>.js
+!/dist/<%=name%>.js.map
 !/dist/<%=name%>.min.js
+!/dist/<%=name%>.min.js.map
 /lib/styles/*

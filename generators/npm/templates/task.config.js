@@ -1,5 +1,7 @@
-import Case from 'case';
+import fs from 'fs';
+import pify from 'pify';
 import ora from 'ora';
+import aru from 'aru';
 import meow from 'meow';
 import chokidar from 'chokidar';
 import debounce from 'lodash/debounce';
@@ -25,7 +27,7 @@ const cli = meow(`
 
 data.set({
   name: pkg.name,
-  moduleName: Case.pascal(pkg.name),
+  moduleName: '<%=moduleName%>',
   banner: `
 /*!
  * Copyright 2017, nju33
@@ -58,6 +60,10 @@ construction.set({
 });
 
 (async () => {
+  const access = pify(fs.access);
+  await aru('style', access(construction.get('style').src));
+  await aru('script', access(construction.get('script').src));
+
   switch (cli.input[0]) {
     default:
     case 'dev': {
@@ -84,8 +90,8 @@ construction.set({
 async function build(task, ev = null) {
   const spinner = startOra();
   try {
-    await style.process();
-    await script.process();
+    await aru.right('style', style.process);
+    await aru.right('script', script.process);
     spinner.succeed(`[${task}${ev ? ':' + ev : ''}] Process succeed`);
   } catch (err) {
     spinner.fail(`[${task}${ev ? ':' + ev : ''}] Process fail`);
