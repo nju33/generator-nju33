@@ -64,6 +64,4 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-/generators/npm/index.js
-/generators/petty/index.js
-/generators/babel/index.js
+/generators/*/index.js
