@@ -16,27 +16,19 @@ Then, download the latest version.
 
 ## Usage
 
-### HTML
+```js
+import <%=moduleName%> from '<%=name%>';
+const <%=moduleName%> = require('<%=name%>');
+```
 
 ```html
-
-<!-- When reading by itself -->
 <script src="/path/tp/<%=name%>.js"></script>
 ```
 
-### JavaScript
-
-```js
-import <%=moduleName%> from '<%=name%>';
-
-```
 
 ### API
 
-### Example
-
-- `test/fixtures/`
-- `example/webpack/`
+## Example
 
 ## LICENSE
 
