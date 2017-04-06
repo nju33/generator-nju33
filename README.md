@@ -107,6 +107,14 @@ yo nju33:babel
 1. Look for `package.json` and create `.babelrc` in the same directory or  edit already `.babelrc`
 2. Install plugins with `yarn`
 
+### `bookmarklet`
+
+#### Usage
+
+```bash
+yo nju33:bookmarklet <project-name>
+```
+
 ## License
 
 The MIT License (MIT)
